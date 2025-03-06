@@ -119,6 +119,12 @@ header h1 {
   padding: 20px;
 }
 
+.welcome {
+  font-size: 40px;
+  font-family: var(--title-font);
+  font-weight: 600;
+}
+
 .index-portfolio-wrapper h4 {
   font-size: 40px;
   font-family: var(--title-font);
@@ -129,7 +135,7 @@ header h1 {
   display: flex;
   justify-content: center;
   gap: 70px;
-  margin: 150px 170px;
+  margin: 100px 170px;
 }
 
 .index-portfolio-container h3 {
