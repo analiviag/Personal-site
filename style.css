@@ -125,10 +125,11 @@ header h1 {
   font-weight: 600;
 }
 
-.index-portfolio-wrapper h4 {
-  font-size: 40px;
+.index-portfolio-wrapper h3 {
+  font-size: 50px;
   font-family: var(--title-font);
   text-align: center;
+  padding: 50px;
 }
 
 .index-portfolio-container {
@@ -138,7 +139,7 @@ header h1 {
   margin: 100px 170px;
 }
 
-.index-portfolio-container h3 {
+.index-portfolio-container h4 {
   text-align: center;
   font-size: 40px;
   font-family: var(--title-font);
@@ -378,12 +379,4 @@ small {
 
 .small-center {
   text-align: center;
-}
-
-@media (max-width: 600px) {
-  .btn,
-  .input-button {
-    display: block;
-    width: 100%;
-  }
 }
