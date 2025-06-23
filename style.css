@@ -161,6 +161,7 @@ header h1 {
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   display: inline-block;
+  border: 1px solid transparent;
 }
 
 .btn-container {
@@ -172,7 +173,7 @@ header h1 {
 .input-button:hover {
   background-color: white;
   color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border-color: var(--primary-color);
   transition: all ease-in-out 150ms;
 }
 
