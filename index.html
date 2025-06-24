@@ -15,73 +15,6 @@
 
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom CSS for animations and tweaks -->
-    <style>
-      /* Define custom fonts and colors for Tailwind */
-      :root {
-        --font-body: "Inter", sans-serif;
-        --font-display: "Playfair Display", serif;
-        --color-primary: #2c3e50; /* A deep, elegant blue */
-        --color-secondary: #e74c3c; /* A vibrant, modern red */
-        --color-light: #ecf0f1; /* A soft, light gray */
-        --color-dark: #34495e; /* A complementary dark blue/gray */
-      }
-
-      /* Apply custom fonts */
-      body {
-        font-family: var(--font-body);
-        color: var(--color-primary);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-display);
-      }
-
-      /*
-         * Scroll Fade-in Animation Classes
-         * These are used by the Intersection Observer to create the effect.
-         */
-      .fade-in-section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-
-      .fade-in-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Custom underline animation for nav links */
-      .hover-underline-animation {
-        display: inline-block;
-        position: relative;
-      }
-
-      .hover-underline-animation::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: var(--color-secondary);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
-
-      .hover-underline-animation:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-    </style>
   </head>
   <body class="bg-gray-50 antialiased">
     <!-- =========== Navigation Bar =========== -->
@@ -96,22 +29,22 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <a
-                href="#home"
+                href="index.html"
                 class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
                 >Home</a
               >
               <a
-                href="#about"
+                href="about.html"
                 class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
                 >About</a
               >
               <a
-                href="#projects"
+                href="projects.html"
                 class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
                 >Projects</a
               >
               <a
-                href="#contact"
+                href="contact.html"
                 class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
                 >Contact</a
               >
