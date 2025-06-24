@@ -1,182 +1,52 @@
-/* General styles */
-
 :root {
-  --primary-color: #3b3030;
-  --secondary-color: #dbb5b5;
-  --tertiary-color: #f1e5d1;
-  --background-color: #f5f5f5;
-  --body-font: Arial, Helvetica, sans-serif;
-  --title-font: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --color-primary: #2c3e50; /* A deep, elegant blue */
+  --color-secondary: #e74c3c; /* A vibrant, modern red */
+  --color-light: #ecf0f1; /* A soft, light gray */
+  --color-dark: #34495e; /* A complementary dark blue/gray */
 }
 
 body {
-  font-family: var(--body-font);
-  font-weight: 300;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 1.5;
-  margin: auto;
-  color: var(--primary-color);
+  font-family: var(--font-body);
+  color: var(--color-primary);
 }
 
-nav {
-  background-color: var(--secondary-color);
-  padding: 20px;
-  position: sticky;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
 }
 
-nav li {
-  list-style: none;
-  display: inline;
-  padding: 15px;
+/*
+* Scroll Fade-in Animation Classes
+* These are used by the Intersection Observer in script.js to create the effect.
+*
+* 1. `fade-in-section`: The default state for an element before it's visible.
+* It's invisible (`opacity: 0`) and slightly moved down (`translateY`).
+*
+* 2. `is-visible`: This class is added by JavaScript when the element scrolls into view.
+* It transitions the element to be fully visible (`opacity: 1`) and moves it
+* back to its original position.
+*/
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-nav li a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 400;
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-hr {
-  border: 3px solid var(--primary-color);
-  border-radius: 3px;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.connect-with-me {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.connect-with-me h3,
-.toolkit h3 {
-  font-family: var(--title-font);
-  font-size: 50px;
-  text-align: center;
-}
-
-/* Styles for the  Index page */
-
-header {
-  background: linear-gradient(
-    0deg,
-    rgb(247, 247, 247) 50%,
-    var(--secondary-color) 92%
-  );
-  height: 100%;
-}
-
-header img {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-}
-
-header {
-  text-align: center;
-}
-
-header h1 {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-style: italic;
-  font-size: 70px;
-}
-
-.name-link {
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-.name-link:hover {
-  color: var(--secondary-color);
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-left {
-  place-self: center;
-}
-
-.grid-right {
-  place-self: center;
-}
-
-.hero-dot {
-  color: var(--secondary-color);
-}
-
-.style-icon {
-  text-align: center;
-}
-
-.index-portfolio-wrapper {
-  background-color: var(--tertiary-color);
-  width: 100%;
-  padding: 20px;
-}
-
-.welcome {
-  font-size: 40px;
-  font-family: var(--title-font);
-  font-weight: 600;
-}
-
-.index-portfolio-wrapper h3 {
-  font-size: 50px;
-  font-family: var(--title-font);
-  text-align: center;
-  padding: 50px;
-}
-
-.index-portfolio-container {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-  margin: 100px 170px;
-}
-
-.index-portfolio-container h4 {
-  text-align: center;
-  font-size: 40px;
-  font-family: var(--title-font);
-}
-
-.index-portfolio-container p {
-  margin-bottom: 90px;
-  color: #3b3030;
-}
-
-.btn,
-.input-button {
-  padding: 20px 35px;
-  font-size: 17px;
-  font-weight: 300;
-  color: white;
-  background-color: var(--primary-color);
-  text-decoration: none;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  border: 1px solid transparent;
-}
-
-.btn-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.btn:hover,
-.input-button:hover {
-  background-color: white;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-  transition: all ease-in-out 150ms;
-}
-
+/*
+* Custom Underline Animation for Navigation Links
+* Creates a stylish effect when hovering over links in the navbar.
+*/
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -188,196 +58,19 @@ header h1 {
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
-  background-color: var(--primary-color);
+  background-color: var(--color-secondary);
+  transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-.toolkit {
-  background-color: var(--background-color);
-  padding: 35px;
-}
-
-.toolkit ul {
-  margin-bottom: 100px;
-}
-
-.toolkit li {
-  text-align: center;
-  list-style-type: circle;
-  list-style-position: inside;
-  font-size: 23px;
-  line-height: 2;
-}
-
-/* Styles for the About Me page */
-
-.about-h1 {
-  font-size: 80px;
-}
-.about-header {
-  float: right;
-  margin: 50px;
-  text-align: center;
-}
-
-.pic-ana img {
-  float: left;
-  margin: 50px;
-  border-radius: 10px;
-}
-
-/* Styles for the Projects page */
-
-.projects-h1 {
-  font-size: 40px;
-  margin: 50px;
-}
-
-.projects-h1 i {
-  color: var(--secondary-color);
-}
-
-.projects-img {
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.background-portfolio {
-  background-color: var(--background-color);
-}
-
-.portfolio-container {
-  position: relative;
-  display: inline-block;
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-bottom: 5%;
-  margin-top: 3%;
-}
-
-.portfolio-container img {
-  display: block;
-}
-
-.portfolio-txt-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  text-align: center;
-  background-color: rgb(0, 0, 0, 0.7);
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-.portfolio-container:hover .portfolio-txt-container {
-  opacity: 1;
-}
-
-.portfolio-txt-container h5 {
-  font-family: var(--title-font);
-  font-size: 33px;
-}
-
-.portfolio-txt-container p {
-  text-align: center;
-  margin: 30px;
-}
-
-.portfolio-btn a {
-  background-color: var(--tertiary-color);
-  color: var(--primary-color);
-}
-
-.portfolio-btn a:hover {
-  background-color: var(--primary-color);
-  color: var(--tertiary-color);
-  border: 1px solid var(--tertiary-color);
-}
-
-/* Styles for Contact page */
-
-h1 {
-  font-size: 50px;
-  text-align: center;
-  font-family: var(--title-font);
-}
-
-form {
-  display: inline-block;
-  border: 1px solid var(--primary-color);
-  border-radius: 1em;
-  width: 40%;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-form textarea {
-  resize: none;
-  width: 100%;
-}
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px;
-}
-.form-group {
-  padding: 20px;
-}
-
-.input-box {
-  height: 30px;
-  width: 100%;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-.input-message-box {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-.contact-p {
-  text-align: center;
-  margin: 30px 100px;
-}
-
-/* Styles for end of pages */
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-}
-
-footer a {
-  color: var(--primary-color);
-  font-size: 2rem;
-  padding: 30px;
-}
-
-footer a:hover {
-  color: var(--secondary-color);
-}
-
-small {
-  background-color: var(--secondary-color);
-  padding: 20px;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  margin-top: 30px;
-}
-
-.small-center {
-  text-align: center;
+/* Highlighting the active navigation link */
+nav a.text-red-500 {
+  font-weight: bold;
 }

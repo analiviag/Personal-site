@@ -3,224 +3,452 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- P.S. This project is not responsive yet -->
-
     <title>Analivia's Portfolio</title>
-  </head>
-  <body>
-    <!-- I've used the same nav, footer and small for every page to make it consistent and easy to update -->
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html" class="hover-underline-animation">Home </a>
-        </li>
-        <li>
-          <a href="about.html" class="hover-underline-animation">About Me</a>
-        </li>
-        <li>
-          <a href="projects.html" class="hover-underline-animation">Projects</a>
-        </li>
-        <li>
-          <a href="contact.html" class="hover-underline-animation">Contact</a>
-        </li>
-      </ul>
-    </nav>
-    <header>
-      <div class="hero-container">
-        <img
-          src="./images/programmer.svg"
-          alt="image of a happy woman coding"
-          class="hero-coder-img grid-left"
-          width="450"
-        />
 
-        <h1 class="grid-right">
-          Hello, <br />
-          I'm
-          <a href="about.html" class="hover-underline-animation name-link"
-            >Analivia</a
+    <!-- Google Fonts: Inter for body, Playfair Display for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS for animations and tweaks -->
+    <style>
+      /* Define custom fonts and colors for Tailwind */
+      :root {
+        --font-body: "Inter", sans-serif;
+        --font-display: "Playfair Display", serif;
+        --color-primary: #2c3e50; /* A deep, elegant blue */
+        --color-secondary: #e74c3c; /* A vibrant, modern red */
+        --color-light: #ecf0f1; /* A soft, light gray */
+        --color-dark: #34495e; /* A complementary dark blue/gray */
+      }
+
+      /* Apply custom fonts */
+      body {
+        font-family: var(--font-body);
+        color: var(--color-primary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-display);
+      }
+
+      /*
+         * Scroll Fade-in Animation Classes
+         * These are used by the Intersection Observer to create the effect.
+         */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom underline animation for nav links */
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+      }
+
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--color-secondary);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 antialiased">
+    <!-- =========== Navigation Bar =========== -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex-shrink-0">
+            <a href="#home" class="text-2xl font-bold text-gray-800"
+              >Analivia.</a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a
+                href="#home"
+                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#projects"
+                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#contact"
+                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
           >
-          <span class="hero-dot">.</span>
-        </h1>
-        <!-- I'll probably add an h2 here in the future -->
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========== Hero Section =========== -->
+    <header id="home" class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Left Column: Image -->
+          <div class="flex justify-center fade-in-section">
+            <img
+              src="https://i.ibb.co/9gP0H8W/programmer.png"
+              alt="Happy woman coding"
+              class="w-full max-w-md rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Right Column: Text Content -->
+          <div class="text-center md:text-left fade-in-section">
+            <h1
+              class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900"
+            >
+              Hello, I'm <span class="text-red-500">Analivia</span>.
+            </h1>
+            <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+              I'm a passionate front-end developer based in Brazil, dedicated to
+              creating beautiful, intuitive, and high-performance web
+              experiences. Welcome to my creative corner of the internet.
+            </p>
+            <div class="mt-8 flex gap-4 justify-center md:justify-start">
+              <a
+                href="#projects"
+                class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition-colors duration-300"
+                >View My Work</a
+              >
+              <a
+                href="#contact"
+                class="inline-block bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300"
+                >Get In Touch</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- Might add an animation for this icon later -->
-    <div class="index-portfolio-wrapper">
-      <div class="style-icon">
-        <i class="bi bi-arrow-down-circle-fill" style="font-size: 2rem"></i>
-      </div>
-
-      <p class="contact-p">
-        <span class="welcome">Welcome<span class="hero-dot">,</span></span>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec metus
-        vel erat dignissim euismod at vitae arcu. Morbi iaculis, tellus sit amet
-        malesuada volutpat, turpis libero sollicitudin ligula, at faucibus
-        turpis lacus ut urna. Donec nec maximus orci. Vivamus vehicula rhoncus
-        tortor, nec pellentesque purus sodales eu. Duis nisi velit, commodo eu
-        est vel, iaculis congue purus. Vivamus vitae est elit. Pellentesque
-        vestibulum ornare tellus, a convallis urna pharetra blandit. Donec orci
-        enim, pretium gr
-      </p>
-      <br />
-      <h3>Check out some of my projects</h3>
-      <section class="index-portfolio-container">
-        <img
-          src="./images/dictionary.png"
-          alt="My dictionary project"
-          width="300"
-          class="projects-img"
-        />
-
-        <div>
-          <h4>Dictionary project</h4>
-          <p>
-            In this project I worked with React. Lorem ipsum dolor sit amet. Est
-            eveniet dolores rem beatae praesentium et amet officia aut cumque
-            sapiente et eaque suscipit et vero autem. Aut nesciunt nulla ex
-            vitae nisi qui laudantium voluptatem non quidem alias id earum
-            facere hic debitis voluptate.
+    <!-- =========== About Me Section =========== -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fade-in-section text-center">
+          <h2 class="text-4xl font-bold text-gray-900">About Me</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            A little bit about my journey, skills, and passions.
           </p>
-          <div class="btn-container">
-            <a
-              href="https://rad-florentine-0431e9.netlify.app/"
-              class="btn"
-              target="_blank"
-              >View Live</a
-            >
-            <a
-              href="https://github.com/analiviag/dictionary-project"
-              class="btn"
-              target="_blank"
-              >GitHub</a
-            >
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- Skill Card 1 -->
+          <div
+            class="fade-in-section bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h3 class="text-2xl font-bold text-gray-800">Development</h3>
+            <p class="mt-4 text-gray-600">
+              "I am a versatile Full-Stack Developer proficient in building
+              dynamic web applications. My expertise spans modern frontend
+              frameworks like React, coupled with responsive design using
+              Tailwind CSS and robust JavaScript development. On the backend, I
+              leverage Node.js, Express.js, and MongoDB to create scalable and
+              efficient server-side solutions."
+            </p>
+          </div>
+          <!-- Skill Card 2 -->
+          <div
+            class="fade-in-section bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h3 class="text-2xl font-bold text-gray-800">Design</h3>
+            <p class="mt-4 text-gray-600">
+              With a keen eye for aesthetics, I enjoy creating clean,
+              user-friendly designs that provide an enjoyable experience for
+              visitors.
+            </p>
+          </div>
+          <!-- Skill Card 3 -->
+          <div
+            class="fade-in-section bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h3 class="text-2xl font-bold text-gray-800">
+              Continuous Learning
+            </h3>
+            <p class="mt-4 text-gray-600">
+              I'm always eager to learn new things, explore new technologies,
+              and challenge myself to grow as a developer and person.
+            </p>
           </div>
         </div>
-      </section>
-
-      <section class="index-portfolio-container">
-        <div>
-          <h4>AI Quote Generator</h4>
-          <p>
-            In this project I worked with AI and React. Lorem ipsum dolor sit
-            amet. Est eveniet dolores rem beatae praesentium et amet officia aut
-            cumque sapiente et eaque suscipit et vero autem. Aut nesciunt nulla
-            ex vitae nisi qui laudantium voluptatem non quidem alias id earum
-            facere hic debitis voluptate.
-          </p>
-
-          <div class="btn-container">
-            <a
-              href="https://rad-florentine-0431e9.netlify.app/"
-              class="btn"
-              target="_blank"
-              >View Live</a
-            >
-            <a
-              href="https://github.com/analiviag/AI-quote-generator"
-              class="btn"
-              target="_blank"
-              >GitHub</a
-            >
-          </div>
-        </div>
-        <img
-          src="./images/quote.png"
-          alt="My AI quote generator project"
-          width="300"
-          class="projects-img"
-        />
-      </section>
-
-      <section class="index-portfolio-container">
-        <img
-          src="./images/van-img.png"
-          alt="My Vancouver travel project"
-          width="300"
-          class="projects-img"
-        />
-        <div>
-          <h4>Vancouver Travel Project</h4>
-          <p>
-            In this project I worked with Vanilla HTML and CSS. Lorem ipsum
-            dolor sit amet. Est eveniet dolores rem beatae praesentium et amet
-            officia aut cumque sapiente et eaque suscipit et vero autem. Aut
-            nesciunt nulla ex vitae nisi qui laudantium voluptatem non quidem
-            alias id earum facere hic debitis voluptate.
-          </p>
-
-          <div class="btn-container">
-            <a
-              href="https://rad-florentine-0431e9.netlify.app/"
-              class="btn"
-              target="_blank"
-              >View Live</a
-            >
-            <a
-              href="https://github.com/analiviag/vancouver-travel-project"
-              class="btn"
-              target="_blank"
-              >GitHub</a
-            >
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- I plan on updating this section with icons later -->
-    <section class="toolkit">
-      <h3>My ToolKit</h3>
-      <ul>
-        <li>React</li>
-        <li>Visual Studio Code</li>
-        <li>CodePen</li>
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>Bootstrap</li>
-        <li>Chrome Dev Tools</li>
-      </ul>
-    </section>
-    <br />
-    <hr />
-    <section class="connect-with-me">
-      <div>
-        <h3>Connect with me!</h3>
-
-        <p>Some sentence about how awesome it would be to connect with me.</p>
-      </div>
-      <div>
-        <a href="contact.html" class="btn">Let's talk!</a>
       </div>
     </section>
 
-    <br />
-    <hr />
-    <footer>
-      <br />
+    <!-- =========== Projects Section =========== -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fade-in-section text-center">
+          <h2 class="text-4xl font-bold text-gray-900">My Projects</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Here are some of the projects I'm proud to have worked on.
+          </p>
+        </div>
 
-      <a href="https://github.com/analiviag" target="_blank"
-        ><i class="bi bi-github"></i
-      ></a>
-      <a href="https://www.linkedin.com/in/analivia-costa/" target="_blank"
-        ><i class="bi bi-linkedin"></i
-      ></a>
+        <div
+          class="mt-16 grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <!-- Project 1 -->
+          <div
+            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <img
+              src="https://i.ibb.co/3k5gCjC/dictionary.png"
+              alt="Dictionary Project"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">Dictionary App</h3>
+              <p class="mt-2 text-gray-600">
+                A clean and simple dictionary built with React, allowing users
+                to search for word definitions.
+              </p>
+              <div class="mt-6 flex justify-between items-center">
+                <a
+                  href="https://rad-florentine-0431e9.netlify.app/"
+                  target="_blank"
+                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  >View Live</a
+                >
+                <a
+                  href="https://github.com/analiviag/dictionary-project"
+                  target="_blank"
+                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <img
+              src="https://i.ibb.co/D8nL1C5/quote.png"
+              alt="AI Quote Generator"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">
+                AI Quote Generator
+              </h3>
+              <p class="mt-2 text-gray-600">
+                An AI-powered quote generator that provides endless inspiration,
+                built with React.
+              </p>
+              <div class="mt-6 flex justify-between items-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  >View Live</a
+                >
+                <a
+                  href="https://github.com/analiviag/AI-quote-generator"
+                  target="_blank"
+                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <img
+              src="https://i.ibb.co/L150cR7/van-img.png"
+              alt="Vancouver Travel Project"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">
+                Vancouver Travel Site
+              </h3>
+              <p class="mt-2 text-gray-600">
+                A beautiful travel website showcasing Vancouver, built with
+                vanilla HTML and CSS.
+              </p>
+              <div class="mt-6 flex justify-between items-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  >View Live</a
+                >
+                <a
+                  href="https://github.com/analiviag/vancouver-travel-project"
+                  target="_blank"
+                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== Contact Section =========== -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fade-in-section text-center">
+          <h2 class="text-4xl font-bold text-gray-900">Get In Touch</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of an amazing team. Feel free to reach out!
+          </p>
+          <div class="mt-8">
+            <a
+              href="mailto:analivia.c@example.com"
+              class="inline-block bg-red-500 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-red-600 transition-colors duration-300 text-lg"
+            >
+              Say Hello
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== Footer =========== -->
+    <footer class="bg-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center space-x-6">
+          <a
+            href="https://github.com/analiviag"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500"
+          >
+            <span class="sr-only">GitHub</span>
+            <svg
+              class="h-6 w-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/analivia-costa/"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500"
+          >
+            <span class="sr-only">LinkedIn</span>
+            <svg
+              class="h-6 w-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="mt-8 text-center text-base text-gray-400">
+          &copy; 2025 Analivia G. All rights reserved.
+        </p>
+        <p class="mt-2 text-center text-sm text-gray-400">
+          Designed and Developed with &hearts;
+        </p>
+      </div>
     </footer>
-    <small class="small-center"
-      ><a href="https://github.com/analiviag/Personal-site" target="_blank"
-        >Developed</a
-      >
-      and designed with 🤍 by Analivia Costa</small
-    >
+
+    <!-- JavaScript for Scroll Animation & Mobile Menu -->
   </body>
 </html>
