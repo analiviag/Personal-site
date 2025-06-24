@@ -74,3 +74,9 @@ h6 {
 nav a.text-red-500 {
   font-weight: bold;
 }
+
+.highlight {
+  background-image: linear-gradient(180deg, transparent 65%, #ffc4a8 65%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
