@@ -2,9 +2,10 @@
   --font-body: "Inter", sans-serif;
   --font-display: "Playfair Display", serif;
   --color-primary: #2c3e50; /* A deep, elegant blue */
-  --color-secondary: #e74c3c; /* A vibrant, modern red */
+  --color-secondary: #d91656;
   --color-light: #ecf0f1; /* A soft, light gray */
   --color-dark: #34495e; /* A complementary dark blue/gray */
+  --hover: #c2134e;
 }
 
 body {
@@ -21,6 +22,36 @@ h6 {
   font-family: var(--font-display);
 }
 
+header {
+  background-image: url("./images/computer.jpg");
+  background-repeat: no-repeat;
+}
+
+.projects-btn,
+.contact-btn {
+  background-color: var(--color-secondary);
+}
+
+.projects-btn:hover,
+.contact-btn:hover {
+  background-color: var(--hover);
+}
+
+.live-btn {
+  color: var(--color-secondary);
+}
+
+.live-btn:hover {
+  color: var(--hover);
+}
+
+.dot {
+  color: var(--color-secondary);
+}
+
+.nav-bar:hover {
+  color: var(--color-secondary);
+}
 /*
 * Scroll Fade-in Animation Classes
 * These are used by the Intersection Observer in script.js to create the effect.
@@ -70,13 +101,21 @@ h6 {
   transform-origin: bottom left;
 }
 
-/* Highlighting the active navigation link */
-nav a.text-red-500 {
-  font-weight: bold;
+.highlight {
+  position: relative;
+  display: inline-block;
 }
 
-.highlight {
-  background-image: linear-gradient(180deg, transparent 65%, #ffc4a8 65%);
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+
+  height: 60%;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 255 35'%3E%3Cpath d='M11.4,25.6C38.9,23.3,66.5,21,94,18.8c27.5-2.2,55-4.5,82.5-6.7c27.5-2.2,55-4.5,82.5-6.7c-2.2,5.5-4.5,11-6.7,16.5c-27.5,2.2-55,4.5-82.5,6.7c-27.5,2.2-55,4.5-82.5,6.7C36.7,29.8,24.1,32.1,11.4,34.3C9.2,28.8,9.2,27.7,11.4,25.6z' fill='%23ffc4a8'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

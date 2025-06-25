@@ -12,6 +12,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <!--styles for CSS-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--Tailwind CSS config-->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-primary": "#D91656",
+              "brand-primary-darker": "#C2134E",
+            },
+          },
+        },
+      };
+    </script>
 
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,29 +39,29 @@
         <div class="flex items-center justify-between h-20">
           <div class="flex-shrink-0">
             <a href="#home" class="text-2xl font-bold text-gray-800"
-              >Analivia.</a
+              >Analivia<span class="dot text-brand-primary">.</span></a
             >
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <a
                 href="index.html"
-                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                class="hover-underline-animation text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium"
                 >Home</a
               >
               <a
                 href="about.html"
-                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                class="hover-underline-animation text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium"
                 >About</a
               >
               <a
                 href="projects.html"
-                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                class="hover-underline-animation text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium"
                 >Projects</a
               >
               <a
                 href="contact.html"
-                class="hover-underline-animation text-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium"
+                class="hover-underline-animation text-gray-700 hover:text-brand-primary px-3 py-2 rounded-md text-sm font-medium"
                 >Contact</a
               >
             </div>
@@ -79,22 +95,22 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
             href="index.html"
-            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            class="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
             >Home</a
           >
           <a
             href="about.html"
-            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            class="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
             >About</a
           >
           <a
             href="projects.html"
-            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            class="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
             >Projects</a
           >
           <a
             href="contact.html"
-            class="text-gray-700 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium"
+            class="text-gray-700 hover:text-brand-primary block px-3 py-2 rounded-md text-base font-medium"
             >Contact</a
           >
         </div>
@@ -102,42 +118,33 @@
     </nav>
 
     <!-- =========== Hero Section =========== -->
-    <header id="home" class="bg-white">
-      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <!-- Left Column: Image -->
-          <div class="flex justify-center fade-in-section">
-            <img
-              src="https://i.ibb.co/9gP0H8W/programmer.png"
-              alt="Happy woman coding"
-              class="w-full max-w-md rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+    <header
+      id="home"
+      class="h-screen bg-cover flex items-center justify-center relative"
+    >
+      <!--Overlay for better readability-->
+      <div class="absolute top-0 left-0 w-full h-full bg-black/10"></div>
 
-          <!-- Right Column: Text Content -->
-          <div class="text-center md:text-left fade-in-section">
-            <h1
-              class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900"
-            >
-              Hello, I'm <span class="highlight">Analivia</span>.
-            </h1>
-            <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
-              Welcome to my creative corner of the internet. I build simple and
-              functional websites for busy people.
-            </p>
-            <div class="mt-8 flex gap-4 justify-center md:justify-start">
-              <a
-                href="projects.html"
-                class="inline-block bg-red-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition-colors duration-300"
-                >View My Work</a
-              >
-              <a
-                href="contact.html"
-                class="inline-block bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300"
-                >Get In Touch</a
-              >
-            </div>
-          </div>
+      <!--Centered text-->
+      <div class="text-center z-10 p-4">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white">
+          Hello, I'm <span class="dot">Analivia</span>.
+        </h1>
+        <p class="mt-6 text-lg max-w-lg mx-auto">
+          Welcome to my creative corner of the internet. I build simple and
+          functional websites for busy people.
+        </p>
+        <div class="mt-8 flex gap-4 justify-center">
+          <a
+            href="projects.html"
+            class="projects-btn inline-block text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors duration-300"
+            >View My Work</a
+          >
+          <a
+            href="contact.html"
+            class="inline-block bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300"
+            >Get In Touch</a
+          >
         </div>
       </div>
     </header>
@@ -212,7 +219,7 @@
             class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
           >
             <img
-              src="https://i.ibb.co/3k5gCjC/dictionary.png"
+              src="./images/dictionary.png"
               alt="Dictionary Project"
               class="w-full h-56 object-cover"
             />
@@ -226,7 +233,7 @@
                 <a
                   href="https://rad-florentine-0431e9.netlify.app/"
                   target="_blank"
-                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  class="text-sm font-semibold live-btn"
                   >View Live</a
                 >
                 <a
@@ -243,7 +250,7 @@
             class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
           >
             <img
-              src="https://i.ibb.co/D8nL1C5/quote.png"
+              src="./images/quote.png"
               alt="AI Quote Generator"
               class="w-full h-56 object-cover"
             />
@@ -259,7 +266,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  class="text-sm font-semibold live-btn"
                   >View Live</a
                 >
                 <a
@@ -276,7 +283,7 @@
             class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
           >
             <img
-              src="https://i.ibb.co/L150cR7/van-img.png"
+              src="./images/van-img.png"
               alt="Vancouver Travel Project"
               class="w-full h-56 object-cover"
             />
@@ -292,7 +299,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-sm font-semibold text-red-500 hover:text-red-700"
+                  class="text-sm font-semibold live-btn"
                   >View Live</a
                 >
                 <a
@@ -320,7 +327,7 @@
           <div class="mt-8">
             <a
               href="mailto:analivia.c@example.com"
-              class="inline-block bg-red-500 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-red-600 transition-colors duration-300 text-lg"
+              class="inline-block text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-lg contact-btn"
             >
               Say Hello
             </a>
