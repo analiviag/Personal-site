@@ -1,10 +1,10 @@
 :root {
   --font-body: "Inter", sans-serif;
   --font-display: "Playfair Display", serif;
-  --color-primary: #2c3e50; /* A deep, elegant blue */
+  --color-primary: #2c3e50;
   --color-secondary: #d91656;
-  --color-light: #ecf0f1; /* A soft, light gray */
-  --color-dark: #34495e; /* A complementary dark blue/gray */
+  --color-light: #ecf0f1;
+  --color-dark: #34495e;
   --hover: #c2134e;
 }
 
@@ -99,23 +99,4 @@ header {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-.highlight {
-  position: relative;
-  display: inline-block;
-}
-
-.highlight::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
-
-  height: 60%;
-  z-index: -1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 255 35'%3E%3Cpath d='M11.4,25.6C38.9,23.3,66.5,21,94,18.8c27.5-2.2,55-4.5,82.5-6.7c27.5-2.2,55-4.5,82.5-6.7c-2.2,5.5-4.5,11-6.7,16.5c-27.5,2.2-55,4.5-82.5,6.7c-27.5,2.2-55,4.5-82.5,6.7C36.7,29.8,24.1,32.1,11.4,34.3C9.2,28.8,9.2,27.7,11.4,25.6z' fill='%23ffc4a8'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
