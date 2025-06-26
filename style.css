@@ -10,7 +10,7 @@
 
 body {
   font-family: var(--font-body);
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
 }
 
 h1,
@@ -49,9 +49,6 @@ header {
   color: var(--color-secondary);
 }
 
-.nav-bar:hover {
-  color: var(--color-secondary);
-}
 /*
 * Scroll Fade-in Animation Classes
 * These are used by the Intersection Observer in script.js to create the effect.
