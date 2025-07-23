@@ -27,6 +27,10 @@ header {
   background-repeat: no-repeat;
 }
 
+.about-hello {
+  color: var(--color-secondary);
+}
+
 .projects-btn,
 .contact-btn {
   background-color: var(--color-secondary);
@@ -96,4 +100,37 @@ header {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/*Arrow animation*/
+
+.arrow-container {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: jump 1.5s infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  stroke: var(--color-secondary);
+}
+
+.skills-icon {
+  height: 70px;
+  width: 70px;
 }
