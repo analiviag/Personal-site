@@ -3,67 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Analivia's Portfolio</title>
+    <title>Analívia's Portfolio</title>
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!--Favicon Icons-->
+    <link rel="icon" href="/images/favicon.ico" sizes="any" />
     <link
       rel="icon"
       type="image/png"
       href="/images/favicon/favicon-32x32.png"
-      sizes="32x32"
     />
     <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/android-icon-36x36.png"
-      sizes="36x36"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/android-icon-48x48.png"
-      sizes="48x48"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/android-icon-72x72.png"
-      sizes="72x72"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/android-icon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/android-icon-144x144.png"
-      sizes="144x144"
-    />
-    <link
-      rel="icon"
-      type="image/png"
+      rel="apple-touch-icon"
       href="/images/favicon/android-icon-192x192.png"
-      sizes="192x192"
     />
+
+    <!-- Font Awesome for Social Icons -->
     <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon/favicon-16x16.png"
-      sizes="16x16"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
     <!-- Google Fonts: Inter for body, Playfair Display for headings -->
@@ -87,7 +48,7 @@
         <div class="flex items-center justify-between h-20">
           <div class="flex-shrink-0">
             <a href="index.html" class="text-2xl font-bold text-gray-800"
-              >Analivia<span class="dot text-brand-primary">.</span></a
+              >Analívia<span class="dot text-brand-primary">.</span></a
             >
           </div>
           <div class="hidden md:block">
@@ -98,12 +59,12 @@
                 >Home</a
               >
               <a
-                href="about.html"
+                href="#about"
                 class="hover-underline-animation text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
                 >About</a
               >
               <a
-                href="projects.html"
+                href="#projects"
                 class="hover-underline-animation text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
                 >Projects</a
               >
@@ -147,12 +108,12 @@
             >Home</a
           >
           <a
-            href="about.html"
+            href="#about"
             class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
             >About</a
           >
           <a
-            href="projects.html"
+            href="#projects"
             class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
             >Projects</a
           >
@@ -176,7 +137,7 @@
       <!--Centered text-->
       <div class="text-center z-10 p-4">
         <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white">
-          Hello, I'm <span class="dot">Analivia</span>.
+          Hello, I'm <span class="dot">Analívia</span>.
         </h1>
         <p class="mt-6 text-lg max-w-lg mx-auto">
           Welcome to my creative corner of the internet. I build simple and
@@ -184,7 +145,7 @@
         </p>
         <div class="mt-8 flex gap-4 justify-center">
           <a
-            href="projects.html"
+            href="#projects"
             class="projects-btn inline-block text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors duration-300"
             >View My Work</a
           >
@@ -212,15 +173,53 @@
           </svg>
         </div>
       </div>
+
+      <!--Vertical Social Links-->
+
+      <div class="social-links">
+        <!-- Icons -->
+        <a
+          href="https://github.com/analiviag"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/analivia-costa/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <!-- Straight Line SVG -->
+        <div class="straight-line">
+          <svg
+            width="2"
+            height="400"
+            viewBox="0 0 2 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 1 0 L 1 400"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
     </header>
 
-    <!-- =========== About Me Section =========== -->
+    <!-- =========== About Me Section Skill Cards =========== -->
     <section id="about" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-section text-center">
           <h2 class="text-4xl font-bold text-gray-900">My journey!</h2>
           <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            A little bit about my journey, skills, and passions. (change)
+            A bit about my story and how I discovered my love for coding.
           </p>
         </div>
 
@@ -255,15 +254,229 @@
           <div
             class="fade-in-section bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 class="text-2xl font-bold text-gray-800">
-              Continuous Learning
-            </h3>
+            <h3 class="text-2xl font-bold text-gray-800">How I work</h3>
             <p class="mt-4 text-gray-600">
               A core tenet of my approach is a passion for continuous learning.
               I am dedicated to exploring new technologies, refining my skills,
               and constantly adapting to the evolving landscape of software
               development.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== About Section =========== -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div class="fade-in-section">
+            <img
+              src="./images/analivia.jpg"
+              alt="Analivia Costa Profile Picture"
+              class="rounded-md shadow-2xl max-w-lg"
+            />
+          </div>
+          <div class="fade-in-section">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+              <code
+                ><span class="about-hello">&lt;</span>Hello!
+                <span class="about-hello">/&gt;</span></code
+              >
+            </h1>
+            <p class="mt-4 text-lg text-gray-600">
+              I'm Analívia, a web developer who likes to make aesthetically
+              pleasing and user-friendly websites for busy people, specifically
+              health care professionals, who otherwise wouldn't have the time or
+              skills for that. My journey into coding started with a curiosity
+              for how websites worked, and it has since grown into a full-blown
+              passion. I'm experienced in using React, Node.js, JavaScript and
+              MongoDB.
+            </p>
+            <p class="mt-4 text-lg text-gray-600">
+              I thrive on turning complex problems into simple, beautiful, and
+              intuitive designs. When I'm not coding you will find me doing all
+              things mom, dreaming about when my next big trip will be, or just
+              really enjoying the comfort of my space. I am also a dual citizen
+              brazilian-canadian, so we can communicate in English or
+              Portuguese.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-20 fade-in-section">
+          <h2 class="text-3xl font-bold text-center text-gray-900">
+            My Skills
+          </h2>
+          <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <a
+              href="https://react.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://git-scm.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://code.visualstudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://getbootstrap.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://www.mongodb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://expressjs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://nodejs.org/en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://www.npmjs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg"
+                />
+              </div>
+            </a>
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="p-4 bg-gray-100 rounded-lg flex justify-center transition duration-300 hover:-translate-y-2"
+              >
+                <img
+                  class="skills-icon"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -372,6 +585,69 @@
                 >
                 <a
                   href="https://github.com/analiviag/vancouver-travel-project"
+                  target="_blank"
+                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <img
+              src="./images/dictionary.png"
+              alt="Dictionary Project"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">Dictionary App</h3>
+              <p class="mt-2 text-gray-600">
+                A clean and simple dictionary built with React, allowing users
+                to search for word definitions.
+              </p>
+              <div class="mt-6 flex justify-between items-center">
+                <a
+                  href="https://rad-florentine-0431e9.netlify.app/"
+                  target="_blank"
+                  class="text-sm font-semibold live-btn"
+                  >View Live</a
+                >
+                <a
+                  href="https://github.com/analiviag/dictionary-project"
+                  target="_blank"
+                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div
+            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+          >
+            <img
+              src="./images/world-clock-app.png"
+              alt="World Clock Project"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800">World Clock</h3>
+              <p class="mt-2 text-gray-600">
+                A minimalist World Clock web application that displays real-time
+                local times for selected cities globally, built with a focus on
+                simplicity and user experience.
+              </p>
+              <div class="mt-6 flex justify-between items-center">
+                <a
+                  href="https://phenomenal-hummingbird-e67e93.netlify.app/"
+                  target="_blank"
+                  class="text-sm font-semibold live-btn"
+                  >View Live</a
+                >
+                <a
+                  href="https://github.com/analiviag/world-clock"
                   target="_blank"
                   class="text-sm font-semibold text-gray-600 hover:text-gray-900"
                   >GitHub</a
