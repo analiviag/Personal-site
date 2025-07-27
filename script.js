@@ -47,3 +47,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start observing each of these elements
   targetElements.forEach((el) => observer.observe(el));
 });
+
+// --- Back to Top Button Logic ---
+
+// Get the button
+const backToTopBtn = document.getElementById("back-to-top-btn");
+
+// When the user scrolls down 400px from the top, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 400 ||
+    document.documentElement.scrollTop > 400
+  ) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+}
