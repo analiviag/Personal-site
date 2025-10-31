@@ -129,7 +129,7 @@
     <!-- =========== Hero Section =========== -->
     <header
       id="home"
-      class="h-screen bg-cover flex items-center justify-center relative"
+      class="min-h-screen bg-cover flex items-center justify-center relative"
     >
       <!--Overlay for better readability-->
       <div class="absolute top-0 left-0 w-full h-full bg-black/10"></div>
@@ -176,7 +176,7 @@
 
       <!--Vertical Social Links-->
 
-      <div class="social-links">
+      <div class="social-links hidden md:flex">
         <!-- Icons -->
         <a
           href="https://github.com/analiviag"
@@ -663,7 +663,9 @@
     <section id="contact" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-section text-center">
-          <h2 class="text-4xl font-bold text-gray-900">Get In Touch</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+            Get In Touch
+          </h2>
           <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or
             opportunities to be part of an amazing team. Feel free to reach out!
@@ -671,7 +673,7 @@
           <div class="mt-8">
             <a
               href="mailto:analivia.c@example.com"
-              class="inline-block text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-lg contact-btn"
+              class="inline-block text-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-lg shadow-lg transition-colors duration-300 text-base md:text-lg contact-btn"
             >
               Say Hello
             </a>
