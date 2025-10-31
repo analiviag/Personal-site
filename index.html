@@ -488,39 +488,70 @@
         <div class="fade-in-section text-center">
           <h2 class="text-4xl font-bold text-gray-900">My Projects</h2>
           <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Here are some of the projects I'm proud to have worked on.
+            Check out some of the projects I'm proud to have worked on.
           </p>
         </div>
-
-        <div
-          class="mt-16 grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        >
-          <!-- Project 1 -->
+        <!-- Project 1 -->
+        <div class="mt-20 grid grid-cols-1 gap-16 md:gap-20">
           <div
-            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+            class="fade-in-section grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg"
           >
-            <img
-              src="./images/notesapp.png"
-              alt="Note Taking App Project"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Note Taking App</h3>
-              <p class="mt-2 text-gray-600">
-                A clean and simple note taking App built with Node.js, Express
-                and EJS.
+            <div class="md:col-span-5">
+              <img
+                src="./images/notesapp.png"
+                alt="Note Taking App Project"
+                class="w-full h-auto rounded-lg object-cover"
+              />
+            </div>
+            <div class="md:col-span-7">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+                Note Taking App
+              </h3>
+              <p class="mt-4 text-gray-600">
+                A full-stack web application designed for creating, managing,
+                and organizing personal notes. Built with Node.js, Express, and
+                MongoDB, this application provides a secure and intuitive
+                interface for users to jot down their thoughts, with features
+                like tagging, color-coding, and pinning important notes.
               </p>
-              <div class="mt-6 flex justify-between items-center">
+
+              <div class="mt-5">
+                <h4
+                  class="text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                >
+                  Tech Stack
+                </h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >Node.js</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >Express</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >EJS</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >MongoDB</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-6 flex gap-4">
                 <a
                   href="https://notesapp-fi98.onrender.com/"
                   target="_blank"
-                  class="text-sm font-semibold live-btn"
+                  class="projects-btn inline-block text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-colors duration-300 text-sm"
                   >View Live</a
                 >
                 <a
                   href="https://github.com/analiviag/notesapp"
                   target="_blank"
-                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  class="inline-block bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300 text-sm"
                   >GitHub</a
                 >
               </div>
@@ -528,65 +559,135 @@
           </div>
           <!-- Project 2 -->
           <div
-            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+            class="fade-in-section grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg"
           >
-            <img
-              src="./images/quote.png"
-              alt="AI Quote Generator"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">
-                AI Quote Generator
+            <div class="md:col-span-7">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+                TheraRoot
               </h3>
-              <p class="mt-2 text-gray-600">
-                An AI-powered quote generator that provides endless inspiration,
-                built with React.
+              <p class="mt-4 text-gray-600">
+                In today's digital world, therapists need a private and
+                professional environment to network and collaborate. TheraRoot
+                was built to be this solution. It's a feature-rich platform
+                where therapists can find and connect with colleagues based on
+                specific criteria (location, specialties, modalities), engage in
+                meaningful discussions within specialized communities, share
+                resources, chat in real-time, and manage their professional
+                profile. The application features a real-time chat system,
+                dynamic forum capabilities, and a fully responsive design for a
+                seamless experience on any device.
               </p>
-              <div class="mt-6 flex justify-between items-center">
+
+              <div class="mt-5">
+                <h4
+                  class="text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                >
+                  Tech Stack
+                </h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >MERN</span
+                  >
+
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >Tailwind CSS & Shadcn/UI</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >JWT</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >Socket.IO</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-6 flex gap-4">
                 <a
-                  href="https://endearing-hotteok-0d2267.netlify.app/"
+                  href="https://theraroot.net"
                   target="_blank"
-                  class="text-sm font-semibold live-btn"
+                  class="projects-btn inline-block text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-colors duration-300 text-sm"
                   >View Live</a
                 >
                 <a
-                  href="https://github.com/analiviag/AI-quote-generator"
+                  href="https://github.com/analiviag/TheraRoot-Overview"
                   target="_blank"
-                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  class="inline-block bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300 text-sm"
                   >GitHub</a
                 >
               </div>
             </div>
+            <div class="md:col-span-5">
+              <img
+                src="./images/dash-theraroot.png"
+                alt="TheraRoot"
+                class="w-full h-auto rounded-lg object-cover"
+              />
+            </div>
           </div>
           <!-- Project 3 -->
           <div
-            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+            class="fade-in-section grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg"
           >
-            <img
-              src="./images/van-img.png"
-              alt="Vancouver Travel Project"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">
-                Vancouver Travel Site
+            <div class="md:col-span-5">
+              <img
+                src="./images/react-weather-app.png"
+                alt="Weather App"
+                class="w-full h-auto rounded-lg object-cover"
+              />
+            </div>
+            <div class="md:col-span-7">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+                Weather App
               </h3>
-              <p class="mt-2 text-gray-600">
-                A beautiful travel website showcasing Vancouver, built with
-                vanilla HTML and CSS.
+              <p class="mt-4 text-gray-600">
+                A responsive React weather application that provides real-time
+                forecasts for any city or the user's current location via
+                geolocation. Features a dynamic, weather-based background, a
+                3-day forecast, and a seamless toggle between Celsius and
+                Fahrenheit units.
               </p>
-              <div class="mt-6 flex justify-between items-center">
+
+              <div class="mt-5">
+                <h4
+                  class="text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                >
+                  Tech Stack
+                </h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >React</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >API</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >CSS Modules & Bootstrap</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >Vite</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-6 flex gap-4">
                 <a
-                  href="https://vancouver-travel-project.netlify.app/"
+                  href="https://amazing-bombolone-2c8f24.netlify.app/"
                   target="_blank"
-                  class="text-sm font-semibold live-btn"
+                  class="projects-btn inline-block text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-colors duration-300 text-sm"
                   >View Live</a
                 >
                 <a
-                  href="https://github.com/analiviag/vancouver-travel-project"
+                  href="https://github.com/analiviag/weatherreact"
                   target="_blank"
-                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  class="inline-block bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300 text-sm"
                   >GitHub</a
                 >
               </div>
@@ -594,62 +695,53 @@
           </div>
           <!-- Project 4 -->
           <div
-            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
+            class="fade-in-section grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg"
           >
-            <img
-              src="./images/dictionary.png"
-              alt="Dictionary Project"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Dictionary App</h3>
-              <p class="mt-2 text-gray-600">
-                A clean and simple dictionary built with React, allowing users
-                to search for word definitions.
-              </p>
-              <div class="mt-6 flex justify-between items-center">
-                <a
-                  href="https://rad-florentine-0431e9.netlify.app/"
-                  target="_blank"
-                  class="text-sm font-semibold live-btn"
-                  >View Live</a
-                >
-                <a
-                  href="https://github.com/analiviag/dictionary-project"
-                  target="_blank"
-                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
-                  >GitHub</a
-                >
-              </div>
+            <div class="md:col-span-5 md:order-last">
+              <img
+                src="./images/AI-quote.png"
+                alt="AI Quote Generator"
+                class="w-full h-auto rounded-lg object-cover"
+              />
             </div>
-          </div>
-          <!-- Project 5 -->
-          <div
-            class="fade-in-section bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300"
-          >
-            <img
-              src="./images/world-clock-app.png"
-              alt="World Clock Project"
-              class="w-full h-56 object-cover"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">World Clock</h3>
-              <p class="mt-2 text-gray-600">
-                A minimalist World Clock web application that displays real-time
-                local times for selected cities globally, built with a focus on
-                simplicity and user experience.
+            <div class="md:col-span-7">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+                AI Quote Generator
+              </h3>
+              <p class="mt-4 text-gray-600">
+                An AI-powered quote generator that provides endless inspiration,
+                built with React.
               </p>
-              <div class="mt-6 flex justify-between items-center">
+
+              <div class="mt-5">
+                <h4
+                  class="text-sm font-semibold text-gray-700 uppercase tracking-wider"
+                >
+                  Tech Stack
+                </h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >React</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >API</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-6 flex gap-4">
                 <a
-                  href="https://phenomenal-hummingbird-e67e93.netlify.app/"
+                  href="https://endearing-hotteok-0d2267.netlify.app/"
                   target="_blank"
-                  class="text-sm font-semibold live-btn"
+                  class="projects-btn inline-block text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-colors duration-300 text-sm"
                   >View Live</a
                 >
                 <a
-                  href="https://github.com/analiviag/world-clock"
+                  href="https://github.com/analiviag/AI-quote-generator"
                   target="_blank"
-                  class="text-sm font-semibold text-gray-600 hover:text-gray-900"
+                  class="inline-block bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300 text-sm"
                   >GitHub</a
                 >
               </div>
